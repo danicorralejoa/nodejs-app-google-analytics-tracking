@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todos los usuarios</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-29Y17C5FL4"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-29Y17C5FL4', { 'send_page_view': false });
+    </script>
+</head>
+<body>
+    <h1>Administrador de usuarios</h1>
+    <table>
+        <tr>
+            <td>Id</td>
+            <td>Nombre</td>
+            <td>Email</td>
+            <td>Modificar</td>
+            <td>Eliminar</td>
+        </tr>
+    
+    <% users.forEach((users)=>{ %>
+        <tr>
+            <td><%= users.id %></td>
+            <td><%= users.name %></td>
+            <td><%= users.email %></td>
+            <td><a id="btn-update" href="/users/update/<%= users.id %>">Modificar</a></td>
+            <td><a id="btn-delete" href="/users/delete/<%= users.id %>">Eliminar</a></td>
+        </tr>
+    <% }) %>
+    
+</table>
+<div id="create-btn-block">
+    <a id="btn-create" href="/users/register">Crear usuario</a>
+</div>
+<div id="back-btn-block">
+    <a id="btn-back" href="/">Volver al sitio principal</a>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/tracking.js"></script>
+</body>
+</html>

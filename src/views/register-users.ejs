@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuarios</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-29Y17C5FL4"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-29Y17C5FL4', { 'send_page_view': false });
+</script>
+</head>
+<body>
+    <h1>Crear usuario</h1>
+    <form action="/users/register" method="POST">
+        <label for="Nombre">Name</label>
+        <input type="text" name="name" id="name">
+        <label for="Email">Email</label>
+        <input type="text" name="email" id="email">
+        <label for="Password">Password</label>
+        <input type="text" name="password" id="password">
+        <input type="submit" value="Registrar">
+    </form>
+    <div id="password-btn-block">
+        <a id="btn-password" href="/users/forgotpassword">¿Olvidastes tu contraseña?</a>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/tracking.js"></script>
+</body>
+</html>

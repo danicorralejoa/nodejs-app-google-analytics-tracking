@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eliminar al usuario</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-29Y17C5FL4"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-29Y17C5FL4', { 'send_page_view': false });
+    </script>
+</head>
+<body>
+    <h1>Eliminar usuario</h1>
+    <h2>¿Desea eliminar este usuario?</h2>
+    
+    <form action="/users/delete/<%= users.id %>" method="POST">
+        <label for="Nombre">Nombre</label>
+        <input type="text" name="name" id="name" value="<%= users.name %>">
+        <label for="Email">Email</label>
+        <input type="text" name="email" id="email" value="<%= users.email %>">
+        <input type="submit" value="Eliminar">
+        <a href="/users/all">Cancelar</a>
+    </form>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/tracking.js"></script>
+</body>
+</html>
